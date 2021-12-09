@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "acercamientoALaEvaluacion4", "acercamientoALaEvaluacion4\acercamientoALaEvaluacion4.csproj", "{70599697-BDAF-42B4-A0ED-710201AEA93A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70599697-BDAF-42B4-A0ED-710201AEA93A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70599697-BDAF-42B4-A0ED-710201AEA93A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70599697-BDAF-42B4-A0ED-710201AEA93A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70599697-BDAF-42B4-A0ED-710201AEA93A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {76BC751B-F57C-4E2C-B3A9-6C8F1FFD50C7}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,24 @@
+﻿<Window x:Class="acercamientoALaEvaluacion4.Views.RequerimientoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:acercamientoALaEvaluacion4.Views"
+        mc:Ignorable="d"
+        Title="RequerimientoWindow" Height="550" Width="650">
+    <Grid>
+        <Label x:Name="label" Content="Registro Requerimiento" HorizontalAlignment="Center" Margin="0,27,0,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold" FontFamily="Algerian"/>
+        <Label x:Name="label1" Content="Tipo Requerimiento: " HorizontalAlignment="Left" Margin="35,114,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" FontFamily="Stencil"/>
+        <ComboBox x:Name="comboBoxTipoRequerimiento" HorizontalAlignment="Left" Margin="254,116,0,0" VerticalAlignment="Top" Width="310"/>
+        <Label x:Name="label2" Content="Asignado A: " HorizontalAlignment="Left" Margin="35,168,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Stencil" FontSize="14"/>
+        <ComboBox x:Name="comboBoxUsuario" HorizontalAlignment="Left" Margin="254,170,0,0" VerticalAlignment="Top" Width="310"/>
+        <Label x:Name="label3" Content="Descripción del Requerimiento: " HorizontalAlignment="Left" Margin="35,217,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Stencil" FontSize="14"/>
+        <TextBox x:Name="textBoxDescripcion" HorizontalAlignment="Left" Margin="44,249,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="520" Height="85" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
+        <Label x:Name="label4" Content="Prioridad: " HorizontalAlignment="Left" Margin="35,363,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Stencil" FontSize="14"/>
+        <ComboBox x:Name="comboBoxPrioridad" HorizontalAlignment="Left" Margin="254,365,0,0" VerticalAlignment="Top" Width="310"/>
+        <Button x:Name="button" Content="Guardar" HorizontalAlignment="Left" Margin="45,407,0,0" VerticalAlignment="Top" Height="60" Width="160" FontSize="18" FontWeight="Bold"/>
+        <Button x:Name="button_Copy" Content="Limpiar Campos" HorizontalAlignment="Left" Margin="224,407,0,0" VerticalAlignment="Top" Height="60" Width="160" FontSize="18" FontWeight="Bold"/>
+        <Button x:Name="button_Copy1" Content="Ir a Listar&#xD;&#xA;Requerimientos" HorizontalAlignment="Left" Margin="404,407,0,0" VerticalAlignment="Top" Height="60" Width="160" FontSize="18" FontWeight="Bold"/>
+
+    </Grid>
+</Window>
