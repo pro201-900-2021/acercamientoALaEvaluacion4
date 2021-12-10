@@ -6,16 +6,24 @@ using System.Threading.Tasks;
 
 namespace acercamientoALaEvaluacion4.Models
 {
-    class Requerimiento
+    public class Requerimiento
     {
         private int id;
         private string descripcion;
         private int idTipo;
         private int responsable;
+        private string prioridad;
 
         public Requerimiento(int id, string descripcion, int idTipo, int responsable)
         {
             this.id = id;
+            this.descripcion = descripcion;
+            this.idTipo = idTipo;
+            this.responsable = responsable;
+        }
+
+        public Requerimiento(string descripcion, int idTipo, int responsable)
+        {
             this.descripcion = descripcion;
             this.idTipo = idTipo;
             this.responsable = responsable;

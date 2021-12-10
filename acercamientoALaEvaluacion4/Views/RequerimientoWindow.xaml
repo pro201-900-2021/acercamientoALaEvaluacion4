@@ -16,9 +16,9 @@
         <TextBox x:Name="textBoxDescripcion" HorizontalAlignment="Left" Margin="44,249,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="520" Height="85" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
         <Label x:Name="label4" Content="Prioridad: " HorizontalAlignment="Left" Margin="35,363,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Stencil" FontSize="14"/>
         <ComboBox x:Name="comboBoxPrioridad" HorizontalAlignment="Left" Margin="254,365,0,0" VerticalAlignment="Top" Width="310"/>
-        <Button x:Name="button" Content="Guardar" HorizontalAlignment="Left" Margin="45,407,0,0" VerticalAlignment="Top" Height="60" Width="160" FontSize="18" FontWeight="Bold"/>
-        <Button x:Name="button_Copy" Content="Limpiar Campos" HorizontalAlignment="Left" Margin="224,407,0,0" VerticalAlignment="Top" Height="60" Width="160" FontSize="18" FontWeight="Bold"/>
-        <Button x:Name="button_Copy1" Content="Ir a Listar&#xD;&#xA;Requerimientos" HorizontalAlignment="Left" Margin="404,407,0,0" VerticalAlignment="Top" Height="60" Width="160" FontSize="18" FontWeight="Bold"/>
+        <Button x:Name="buttonGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="45,407,0,0" VerticalAlignment="Top" Height="60" Width="160" FontSize="18" FontWeight="Bold" Click="buttonGuardar_Click"/>
+        <Button x:Name="buttonClear" Content="Limpiar Campos" HorizontalAlignment="Left" Margin="224,407,0,0" VerticalAlignment="Top" Height="60" Width="160" FontSize="18" FontWeight="Bold" Click="buttonClear_Click"/>
+        <Button x:Name="buttonRequerimientos" Content="Ir a Listar&#xD;&#xA;Requerimientos" HorizontalAlignment="Left" Margin="404,407,0,0" VerticalAlignment="Top" Height="60" Width="160" FontSize="18" FontWeight="Bold" Click="buttonRequerimientos_Click"/>
 
     </Grid>
 </Window>

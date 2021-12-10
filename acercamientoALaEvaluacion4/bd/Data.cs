@@ -70,6 +70,27 @@ namespace acercamientoALaEvaluacion4.bd
             return listaTipos;
         }
 
+        public List<Prioridad> GetPrioridades()
+        {
+            List<Prioridad> listaPrioridad = new List<Prioridad>();
+
+            consulta = "SELECT * FROM prioridad;";
+
+            sqlConnection.Open();
+            sqlCommand = new SqlCommand(consulta, sqlConnection);
+            response = sqlCommand.ExecuteReader();
+
+            while (response.Read())
+            {
+                int idActual = response.GetInt32(0);
+                string nombreActual = response.GetString(1);
+                int diaActual = response.GetInt32(2);
+                listaPrioridad.Add(new Prioridad(idActual, nombreActual, diaActual));
+            }
+            sqlConnection.Close();
+            return listaPrioridad;
+        }
+
         public List<Usuario> GetUsuarios()
         {
             List<Usuario> listaUsuarios = new List<Usuario>();
@@ -118,6 +139,16 @@ namespace acercamientoALaEvaluacion4.bd
             //Schrodinger -> u = Usuario || u = null 
 
             return u;
+        }
+
+        public int addRequerimiento(Requerimiento requerimiento)
+        {
+            consulta = "insert into requerimiento values('"+requerimiento.Descripcion+"', "+requerimiento.IdTipo+", "+requerimiento.Responsable+");";
+            sqlConnection.Open();
+            sqlCommand = new SqlCommand(consulta, sqlConnection);
+            int filasAfectadas = sqlCommand.ExecuteNonQuery();
+            sqlConnection.Close();
+            return filasAfectadas;
         }
     }
 }

@@ -1,0 +1,21 @@
+﻿<Window x:Class="acercamientoALaEvaluacion4.Views.CheckRequirements"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:acercamientoALaEvaluacion4.Views"
+        mc:Ignorable="d"
+        Title="CheckRequirements" Height="450" Width="800">
+    <Grid>
+        <ComboBox Name="RequirementType" HorizontalAlignment="Left" Margin="164,85,0,0" VerticalAlignment="Top" Width="284"/>
+        <ComboBox Name="RequirementPriority" HorizontalAlignment="Left" Margin="164,136,0,0" VerticalAlignment="Top" Width="284"/>
+        <Label Content="Prioridad:" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top" Width="148"/>
+        <Label Content="Tipo Requerimiento:" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Width="149"/>
+        <Button Name="RequirementSearch" Content="Buscar" HorizontalAlignment="Left" Margin="488,137,0,0" VerticalAlignment="Top" Width="84"/>
+        <TextBlock HorizontalAlignment="Left" Margin="173,27,0,0" Text="Consulta Requerimientos" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" FontSize="22" FontFamily="Arial" Width="277"/>
+        <DataGrid Name="RequirementsList"  Margin="48,192,272,45"/>
+        <CheckBox x:Name="checkBoxPendientes" Content="Pendientes" HorizontalAlignment="Left" Margin="665,85,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="checkBoxResueltos" Content="Resueltos" HorizontalAlignment="Left" Margin="665,122,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
