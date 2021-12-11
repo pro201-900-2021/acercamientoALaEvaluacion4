@@ -22,10 +22,12 @@ namespace acercamientoALaEvaluacion4.Views
     public partial class RequerimientoWindow : Window
     {
         private Data d;
+        private Usuario usuarioActual;
         private readonly string[] LISTA_PRIORIDADES = new string[] { "Alta", "Media", "Baja" };
-        public RequerimientoWindow(Data data)
+        public RequerimientoWindow(Data data, Usuario sesion)
         {
             d = data;
+            usuarioActual = sesion;
             InitializeComponent();
             comboBoxTipoRequerimiento.ItemsSource = d.GetTiposRequerimiento();
             comboBoxUsuario.ItemsSource = d.GetUsuarios();
@@ -39,7 +41,7 @@ namespace acercamientoALaEvaluacion4.Views
             Usuario usuario = comboBoxUsuario.SelectedItem as Usuario;
             string descripcion = textBoxDescripcion.Text;
             Prioridad prioridad = comboBoxPrioridad.SelectedItem as Prioridad;
-            int filas = d.addRequerimiento(new Requerimiento(descripcion, tipoRequerimiento.Id, usuario.Id));
+            int filas = d.addRequerimiento(new Requerimiento(descripcion, tipoRequerimiento.Id, usuario.Id, prioridad.Id, "Pendiente"));
 
             if (filas == 1)
             {
@@ -67,7 +69,7 @@ namespace acercamientoALaEvaluacion4.Views
 
         private void buttonRequerimientos_Click(object sender, RoutedEventArgs e)
         {
-            CheckRequirements window = new CheckRequirements(d);
+            CheckRequirements window = new CheckRequirements(d, usuarioActual);
             window.Show();
         }
     }

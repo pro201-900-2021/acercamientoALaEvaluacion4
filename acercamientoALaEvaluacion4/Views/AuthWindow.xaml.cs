@@ -45,7 +45,7 @@ namespace acercamientoALaEvaluacion4.Views
             else
             {
                 //Como la consulta coincidió con un registro, viene el usuario, por lo tanto logueamos.
-                RequerimientoWindow _rw = new RequerimientoWindow(d);
+                RequerimientoWindow _rw = new RequerimientoWindow(d, sesion);
                 _rw.Show();
                 this.Close();
                 

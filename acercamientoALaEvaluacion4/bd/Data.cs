@@ -115,6 +115,78 @@ namespace acercamientoALaEvaluacion4.bd
             return listaUsuarios;
         }
 
+        public List<Requerimiento> GetRequerimientos()
+        {
+            List<Requerimiento> listaRequerimientos = new List<Requerimiento>();
+
+            consulta = "SELECT * FROM requerimiento;";
+
+            sqlConnection.Open();
+            sqlCommand = new SqlCommand(consulta, sqlConnection);
+            response = sqlCommand.ExecuteReader();
+
+            while (response.Read())
+            {
+                int idActual = response.GetInt32(0);
+                string descripcionActual = response.GetString(1);
+                int idTipoActual = response.GetInt32(2);
+                int idUsuarioActual = response.GetInt32(3);
+                int idPrioridadActual = response.GetInt32(4);
+                string estadoActual = response.GetString(5);
+                listaRequerimientos.Add(new Requerimiento(idActual, descripcionActual, idTipoActual, idUsuarioActual, idPrioridadActual, estadoActual));
+            }
+            sqlConnection.Close();
+            return listaRequerimientos;
+        }
+
+        public List<Requerimiento> GetRequerimientos(Usuario usuario)
+        {
+            List<Requerimiento> listaRequerimientos = new List<Requerimiento>();
+
+            consulta = "SELECT * FROM requerimiento where responsable = "+usuario.Id+";";
+
+            sqlConnection.Open();
+            sqlCommand = new SqlCommand(consulta, sqlConnection);
+            response = sqlCommand.ExecuteReader();
+
+            while (response.Read())
+            {
+                int idActual = response.GetInt32(0);
+                string descripcionActual = response.GetString(1);
+                int idTipoActual = response.GetInt32(2);
+                int idUsuarioActual = response.GetInt32(3);
+                int idPrioridadActual = response.GetInt32(4);
+                string estadoActual = response.GetString(5);
+                listaRequerimientos.Add(new Requerimiento(idActual, descripcionActual, idTipoActual, idUsuarioActual, idPrioridadActual, estadoActual));
+            }
+            sqlConnection.Close();
+            return listaRequerimientos;
+        }
+
+        public List<Requerimiento> GetRequerimientos(string consultaCustom)
+        {
+            List<Requerimiento> listaRequerimientos = new List<Requerimiento>();
+
+            consulta = consultaCustom;
+
+            sqlConnection.Open();
+            sqlCommand = new SqlCommand(consulta, sqlConnection);
+            response = sqlCommand.ExecuteReader();
+
+            while (response.Read())
+            {
+                int idActual = response.GetInt32(0);
+                string descripcionActual = response.GetString(1);
+                int idTipoActual = response.GetInt32(2);
+                int idUsuarioActual = response.GetInt32(3);
+                int idPrioridadActual = response.GetInt32(4);
+                string estadoActual = response.GetString(5);
+                listaRequerimientos.Add(new Requerimiento(idActual, descripcionActual, idTipoActual, idUsuarioActual, idPrioridadActual, estadoActual));
+            }
+            sqlConnection.Close();
+            return listaRequerimientos;
+        }
+
         public Usuario Autentificacion(string nombreUsuario, string password)
         {
             Usuario u = null;
@@ -143,7 +215,37 @@ namespace acercamientoALaEvaluacion4.bd
 
         public int addRequerimiento(Requerimiento requerimiento)
         {
-            consulta = "insert into requerimiento values('"+requerimiento.Descripcion+"', "+requerimiento.IdTipo+", "+requerimiento.Responsable+");";
+            consulta = "insert into requerimiento values('"+requerimiento.Descripcion+"', "+requerimiento.IdTipo+", "+requerimiento.Responsable+", "+requerimiento.Prioridad+", '"+requerimiento.Estado+"');";
+            sqlConnection.Open();
+            sqlCommand = new SqlCommand(consulta, sqlConnection);
+            int filasAfectadas = sqlCommand.ExecuteNonQuery();
+            sqlConnection.Close();
+            return filasAfectadas;
+        }
+
+        public int updateRequerimiento(Requerimiento requerimiento)
+        {
+            consulta = "UPDATE requerimiento SET descripcion = '"+requerimiento.Descripcion+"', idTipo = "+requerimiento.IdTipo+", responsable = "+requerimiento.Responsable+", idPrioridad = "+requerimiento.Prioridad+", estado = '"+requerimiento.Estado+"' WHERE id = "+requerimiento.Id+";";
+            sqlConnection.Open();
+            sqlCommand = new SqlCommand(consulta, sqlConnection);
+            int filasAfectadas = sqlCommand.ExecuteNonQuery();
+            sqlConnection.Close();
+            return filasAfectadas;
+        }
+
+        public int deleteRequerimiento(Requerimiento requerimiento)
+        {
+            consulta = "DELETE FROM requerimiento WHERE id = "+requerimiento.Id+";";
+            sqlConnection.Open();
+            sqlCommand = new SqlCommand(consulta, sqlConnection);
+            int filasAfectadas = sqlCommand.ExecuteNonQuery();
+            sqlConnection.Close();
+            return filasAfectadas;
+        }
+
+        public int deleteRequerimiento(int idRequerimiento)
+        {
+            consulta = "DELETE FROM requerimiento WHERE id = " + idRequerimiento + ";";
             sqlConnection.Open();
             sqlCommand = new SqlCommand(consulta, sqlConnection);
             int filasAfectadas = sqlCommand.ExecuteNonQuery();

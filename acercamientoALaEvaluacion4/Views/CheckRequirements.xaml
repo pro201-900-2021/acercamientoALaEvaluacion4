@@ -11,11 +11,13 @@
         <ComboBox Name="RequirementPriority" HorizontalAlignment="Left" Margin="164,136,0,0" VerticalAlignment="Top" Width="284"/>
         <Label Content="Prioridad:" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top" Width="148"/>
         <Label Content="Tipo Requerimiento:" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Width="149"/>
-        <Button Name="RequirementSearch" Content="Buscar" HorizontalAlignment="Left" Margin="488,137,0,0" VerticalAlignment="Top" Width="84"/>
+        <Button Name="RequirementSearch" Content="Buscar" HorizontalAlignment="Left" Margin="488,137,0,0" VerticalAlignment="Top" Width="84" Click="RequirementSearch_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="173,27,0,0" Text="Consulta Requerimientos" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" FontSize="22" FontFamily="Arial" Width="277"/>
-        <DataGrid Name="RequirementsList"  Margin="48,192,272,45"/>
+        <DataGrid x:Name="RequirementsList"  Margin="48,192,272,45"/>
         <CheckBox x:Name="checkBoxPendientes" Content="Pendientes" HorizontalAlignment="Left" Margin="665,85,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="checkBoxResueltos" Content="Resueltos" HorizontalAlignment="Left" Margin="665,122,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="buttonResolve" Content="Marcar Como Resuelto" HorizontalAlignment="Left" Margin="598,217,0,0" VerticalAlignment="Top" Height="63" Width="145" Click="buttonResolve_Click"/>
+        <Button x:Name="buttonDelete" Content="Eliminar" HorizontalAlignment="Left" Margin="598,304,0,0" VerticalAlignment="Top" Height="62" Width="145" Click="buttonDelete_Click"/>
 
     </Grid>
 </Window>
